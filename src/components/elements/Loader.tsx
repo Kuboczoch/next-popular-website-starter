@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
+import theme from '../../assets/theme'
+
 const spinner = keyframes`
   0% {
     transform: rotate(0deg);
@@ -22,17 +24,17 @@ const LoaderStyle = styled('span')`
   overflow: hidden;
   border-width: 2px;
   border-style: solid;
-  border-color: ${(props) => props.loaderColor || props.theme.colors.black};
+  border-color: ${(props) => props.loaderColor};
   border-top-color: transparent !important;
   animation: ${spinner} 1s linear infinite;
 `
 
 interface LoaderProps {
-  loaderColor?: string,
+  loaderColor?: string
   style?: object
 }
 
-const Loader = ({ loaderColor, ...props }: LoaderProps) => (
+const Loader = ({ loaderColor = theme.colors.black, ...props }: LoaderProps) => (
   <LoaderStyle loaderColor={loaderColor} {...props} />
 )
 
