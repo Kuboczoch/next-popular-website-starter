@@ -8,14 +8,16 @@ import Page from '../../blocks/Page'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ title = 'Starter Website', ...props }: LayoutProps) => (
+const Layout = ({ title = 'Starter Website', children, ...props }: LayoutProps) => (
   <Providers>
     <Head>
       <title>{title}</title>
     </Head>
     <Page>
       <Header {...props} />
-      <Page.Content {...props} />
+      <Page.Content {...props}>
+        {children}
+      </Page.Content>
       <Footer {...props} />
     </Page>
   </Providers>
