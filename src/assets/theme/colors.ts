@@ -18,9 +18,21 @@ export type color =
   'thunderbird' |
   'toreaBay' |
   'azureRadiance' |
-  'oliveDrab'
+  'oliveDrab' |
+  'mineShaft'
 
-const colors = {
+interface Colors {
+  [index: string]: string
+}
+
+/**
+  Every index must have a comment: `@color #ffffff rgb(255,255,255)` with a hex value that represents a color.
+  This is used for even better color management.
+
+  Possible use case scenario: Every color is in HEX but your designer did every color in RGB
+ **/
+
+const colors: Colors = {
   // @color #ffffff rgb(255,255,255)
   white: '#ffffff',
   // @color #000000 rgb(0,0,0)
@@ -62,7 +74,9 @@ const colors = {
   // @color #008BFF rgb(0,139,255)
   azureRadiance: '#008BFF',
   // @color #478825 rgb(71,136,37)
-  oliveDrab: '#478825'
+  oliveDrab: '#478825',
+  // @color #333333 rgb(51,51,51)
+  mineShaft: '#333333'
 }
 
 export default colors

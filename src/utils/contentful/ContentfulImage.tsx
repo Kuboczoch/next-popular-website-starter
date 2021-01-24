@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import { Asset } from 'contentful'
 
-/* @example
-  <ContentfulImage {...data.fields.icon} />
-  Where `data.fields.icon` contains an Asset from Contentful
-*/
+/**
+ * An easy way to include Contentful Image with Next.js Image tag
+ *
+ * @example
+ * Where `data.fields.icon` contains an Asset from Contentful
+ * <ContentfulImage {...data.fields.icon} />
+**/
 const ContentfulImage = (props: Asset) => (
   <Image
     src={'https:' + props.fields.file.url}

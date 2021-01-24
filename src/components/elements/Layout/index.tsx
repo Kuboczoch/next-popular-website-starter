@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { ReactChild } from 'react'
 import Head from 'next/head'
 
-import { LayoutProps } from './layout'
 import Providers from './Providers'
 
 import Page from '../../blocks/Page'
 import Header from './Header'
 import Footer from './Footer'
+
+import { ILayoutData } from '../../../utils/contentful/models/getLayoutData'
+
+export interface LayoutProps extends ILayoutData {
+  children: ReactChild
+  title?: string
+}
 
 const Layout = ({ title = 'Starter Website', children, ...props }: LayoutProps) => (
   <Providers>
@@ -15,9 +21,7 @@ const Layout = ({ title = 'Starter Website', children, ...props }: LayoutProps) 
     </Head>
     <Page>
       <Header {...props} />
-      <Page.Content {...props}>
-        {children}
-      </Page.Content>
+      <Page.Content {...props} children={children} />
       <Footer {...props} />
     </Page>
   </Providers>

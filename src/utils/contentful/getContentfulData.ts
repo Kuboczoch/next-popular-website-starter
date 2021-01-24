@@ -1,20 +1,14 @@
+import getData from './getData'
+// @ts-ignore
 import { CONTENT_TYPE } from '../../../@types/generated/contentful'
 
-const contentful = require('contentful')
-
 const getContentfulData = async (contentType: CONTENT_TYPE) => {
-  const client = contentful.createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-  })
+  const data = await getData(contentType)
 
-  const TypeEntries = await client.getEntries({
-    content_type: contentType
-  })
-
+  // JSON parse and stringify is used here to eliminate unexpected behavior from contentful
   return Object.values(
     JSON.parse(JSON.stringify({
-      ...TypeEntries.items
+      ...data
     }))
   )
 }

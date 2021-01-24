@@ -14,7 +14,7 @@ const spinner = keyframes`
   }
 `
 
-const LoaderStyle = styled.span`
+const LoaderStyle = styled('span')`
   display: inline-flex;
   width: 14px;
   height: 14px;
@@ -22,8 +22,7 @@ const LoaderStyle = styled.span`
   overflow: hidden;
   border-width: 2px;
   border-style: solid;
-  border-color: ${(props) =>
-  props.loaderColor ? props.loaderColor : '#000000'};
+  border-color: ${(props) => props.loaderColor || props.theme.colors.black};
   border-top-color: transparent !important;
   animation: ${spinner} 1s linear infinite;
 `

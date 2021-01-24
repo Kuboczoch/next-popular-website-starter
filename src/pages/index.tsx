@@ -2,8 +2,9 @@ import React from 'react'
 
 import Layout from '../components/elements/Layout'
 import Homepage from '../containers/HomePage'
+import getLayoutData, { ILayoutData } from '../utils/contentful/models/getLayoutData'
 
-export interface HomePageProps {
+export interface HomePageProps extends ILayoutData {
 
 }
 
@@ -14,8 +15,12 @@ const Home = (props: HomePageProps) => (
 )
 
 export const getStaticProps = async () => {
+  const layout = await getLayoutData()
+
   return {
-    props: {}
+    props: {
+      layout
+    }
   }
 }
 
