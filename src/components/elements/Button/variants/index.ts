@@ -2,10 +2,8 @@ import { possibleColors } from './_colors'
 import colorVariants from './_colorVariants'
 
 import inline from './inline'
-import joinSectionInline from './joinSectionInline'
 import outline from './outline'
 import transparent from './transparent'
-import headerLink from './headerLink'
 
 export interface colorStates {
   // Default color
@@ -27,9 +25,7 @@ export interface stateProps {
 export type possibleVariants =
   'inline' |
   'outline' |
-  'transparent' |
-  'joinSection' |
-  'headerLink'
+  'transparent'
 
 const variants = (props: { colorStates?: colorStates }): { [index in possibleVariants]: { button?: any, text?: any } } => ({
   inline: inline({
@@ -45,18 +41,6 @@ const variants = (props: { colorStates?: colorStates }): { [index in possibleVar
     }
   }),
   transparent: transparent({
-    color: {
-      ...colorVariants.transparent,
-      ...props.colorStates
-    }
-  }),
-  joinSection: joinSectionInline({
-    color: {
-      ...colorVariants.fullWhite,
-      ...props.colorStates
-    }
-  }),
-  headerLink: headerLink({
     color: {
       ...colorVariants.transparent,
       ...props.colorStates
