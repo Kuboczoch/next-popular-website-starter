@@ -1,6 +1,6 @@
-import { color } from '../assets/theme/colors'
+import { TColor } from '../assets/theme/colors'
 
-function hexToRGB(hex: color | string, alpha?: number) {
+function hexToRGB(hex: TColor | string, alpha?: number) {
   const r = parseInt(hex.slice(1, 3), 16)
   const g = parseInt(hex.slice(3, 5), 16)
   const b = parseInt(hex.slice(5, 7), 16)

@@ -1,10 +1,12 @@
-export type color =
+export type TColor =
+  'transparent' |
   'white' |
   'black' |
   'textGray' |
   'mercury' |
   'alto' |
   'gray' |
+  'regentGray' |
   'silver' |
   'darkBlue' |
   'blueBg' |
@@ -21,18 +23,20 @@ export type color =
   'oliveDrab' |
   'mineShaft'
 
-interface Colors {
-  [index: string]: string
-}
-
 /**
-  Every index must have a comment: `@color #ffffff rgb(255,255,255)` with a hex value that represents a color.
-  This is used for even better color management.
+ List of possible colors in your app.
+ This is used for better color management and suggestions from your *Editor*.
+ You should *avoid* using it directly if there is a color in your palette that represents it; like `primary` or `secondary`.
 
-  Possible use case scenario: Every color is in HEX but your designer did every color in RGB
+ Every index must have a comment: `@color #ffffff rgb(255,255,255)` with a hex value that represents a color.
+ Possible use case scenario: Every color is in HEX but your designer did every color in RGB and you don't know it in HEX.
  **/
 
-const colors: Colors = {
+const colors: {
+  [index in TColor]: string
+} = {
+  // @color transparent
+  transparent: 'transparent',
   // @color #ffffff rgb(255,255,255)
   white: '#ffffff',
   // @color #000000 rgb(0,0,0)
