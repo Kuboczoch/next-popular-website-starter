@@ -4,17 +4,17 @@ import Layout from '../components/elements/Layout'
 import Homepage from '../containers/HomePage'
 import getLayoutData, { ILayoutData } from '../utils/contentful/models/getLayoutData'
 
-export interface HomePageProps extends ILayoutData {
+export interface IHomePageProps extends ILayoutData {
 
 }
 
-const Home = (props: HomePageProps) => (
+const Home = (props: IHomePageProps) => (
   <Layout {...props}>
     <Homepage {...props} />
   </Layout>
 )
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<IHomePageProps> => {
   const layout = await getLayoutData()
 
   return {

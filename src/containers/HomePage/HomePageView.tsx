@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { HomePageProps } from '../../pages'
+import { IHomePageProps } from '../../pages/index'
+import { IHomePageStateProps } from './useHomePage'
 
-const HomePageView = (props: HomePageProps) => (
-  <>
-  </>
+import HomePage from '../../components/blocks/HomePage'
+
+interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {
+
+}
+
+const HomePageView = (props: IHomePageViewProps) => (
+  <HomePage />
 )
 
 export default HomePageView
