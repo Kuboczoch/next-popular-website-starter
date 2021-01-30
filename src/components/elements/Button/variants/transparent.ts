@@ -1,9 +1,9 @@
 import { css } from 'styled-components'
 
 import colors from './_colors'
-import { stateProps } from './index'
+import { variantProps } from './index'
 
-const transparent = (props: stateProps) => ({
+const transparent = (props: variantProps) => ({
   button: css`
     background: ${colors[props.color.unset]};
     padding: 16px 30px;

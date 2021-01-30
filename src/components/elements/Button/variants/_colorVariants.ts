@@ -1,4 +1,4 @@
-import { colorStates } from './'
+import { colorStates } from './_colors'
 
 interface colorVariant {
   [key: string]: colorStates
@@ -6,17 +6,17 @@ interface colorVariant {
 
 const colorVariants: colorVariant = {
   primary: {
-    unset: 'dodgerBlue',
-    hover: 'azureRadiance',
-    active: 'dodgerBlue',
-    focus: 'dodgerBlue',
+    unset: 'primary',
+    hover: 'primary',
+    active: 'primary',
+    focus: 'primary',
     disabled: 'gray'
   },
   secondary: {
-    unset: 'dodgerBlue',
-    hover: 'dodgerBlue',
-    active: 'dodgerBlue',
-    focus: 'dodgerBlue',
+    unset: 'secondary',
+    hover: 'secondary',
+    active: 'secondary',
+    focus: 'secondary',
     disabled: 'transparent'
   },
   transparent: {
@@ -25,40 +25,6 @@ const colorVariants: colorVariant = {
     active: 'transparent',
     focus: 'transparent',
     disabled: 'gray'
-  },
-  fullWhite: {
-    unset: 'white',
-    hover: 'white',
-    active: 'white',
-    focus: 'white',
-    disabled: 'white'
-  },
-  socialButton: {
-    unset: 'periwinkleGray',
-    hover: 'periwinkleGray',
-    active: 'periwinkleGray',
-    focus: 'periwinkleGray',
-    disabled: 'periwinkleGray'
-  },
-  greenPrimary: {
-    unset: 'apple',
-    hover: 'oliveDrab',
-    active: 'apple',
-    focus: 'apple',
-    disabled: 'gray'
-  },
-  joinSectionButton: {
-    unset: 'white',
-    hover: 'oliveDrab',
-    active: 'white',
-    focus: 'white',
-    disabled: 'white'
-  },
-  headerLink: {
-    unset: 'transparent',
-    hover: 'apple',
-    active: 'apple',
-    focus: 'apple'
   }
 }
 

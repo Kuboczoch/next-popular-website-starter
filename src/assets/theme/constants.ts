@@ -5,11 +5,6 @@ const constants = {
     md: '720px',
     lg: '960px',
     xl: '1140px'
-  },
-  transition: {
-    quick: '100ms',
-    normal: '250ms',
-    slow: '400ms'
   }
 }
 

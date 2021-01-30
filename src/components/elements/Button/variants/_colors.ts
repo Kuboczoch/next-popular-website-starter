@@ -4,6 +4,19 @@ import { TPalletColor } from '../../../../assets/theme/palette'
 
 export type possibleColors = TPalletColor | TColor
 
+export interface colorStates {
+  // Default color
+  unset?: possibleColors
+  // Color on Hover
+  hover?: possibleColors
+  // Color when active
+  active?: possibleColors
+  // Color when focused
+  focus?: possibleColors
+  // Color when disabled
+  disabled?: possibleColors
+}
+
 const colors: { [index in possibleColors]: string } = {
   ...theme.palette,
   ...theme.colors

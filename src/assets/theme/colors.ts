@@ -2,14 +2,12 @@ export type TColor =
   'transparent' |
   'white' |
   'black' |
-  'textGray' |
   'mercury' |
   'alto' |
   'gray' |
   'regentGray' |
   'silver' |
   'darkBlue' |
-  'blueBg' |
   'dodgerBlue' |
   'periwinkleGray' |
   'baliHai' |
@@ -29,7 +27,7 @@ export type TColor =
  You should *avoid* using it directly if there is a color in your palette that represents it; like `primary` or `secondary`.
 
  Every index must have a comment: `@color #ffffff rgb(255,255,255)` with a hex value that represents a color.
- Possible use case scenario: Every color is in HEX but your designer did every color in RGB and you don't know it in HEX.
+ It helps to identify the desired color from this list.
  **/
 
 const colors: {
@@ -41,8 +39,6 @@ const colors: {
   white: '#ffffff',
   // @color #000000 rgb(0,0,0)
   black: '#000000',
-  // @color #2B2B2B rgb(43,43,43)
-  textGray: '#2B2B2B',
   // @color #E5E5E5 rgb(229,229,229)
   mercury: '#E5E5E5',
   // @color #E0E0E0 rgb(224,224,224)
@@ -55,8 +51,6 @@ const colors: {
   silver: '#C4C4C4',
   // @color #071332 rgb(7,19,50)
   darkBlue: '#071332',
-  // @color #F8FCFF rgb(248,252,255)
-  blueBg: '#F8FCFF',
   // @color #39A5FF rgb(57,165,255)
   dodgerBlue: '#39A5FF',
   // @color #CBDDEC rgb(203,221,236)

@@ -1,24 +1,12 @@
-import { possibleColors } from './_colors'
+import { colorStates } from './_colors'
+
 import colorVariants from './_colorVariants'
 
 import inline from './inline'
 import outline from './outline'
 import transparent from './transparent'
 
-export interface colorStates {
-  // Default color
-  unset?: possibleColors
-  // Color on Hover
-  hover?: possibleColors
-  // Color when active
-  active?: possibleColors
-  // Color when focused
-  focus?: possibleColors
-  // Color when disabled
-  disabled?: possibleColors
-}
-
-export interface stateProps {
+export interface variantProps {
   color: colorStates
 }
 

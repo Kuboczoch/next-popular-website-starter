@@ -4,6 +4,7 @@ import constants from './constants'
 import gradients from './gradients'
 import palette from './palette'
 import shadows from './shadows'
+import transitions from './transitions'
 
 const theme = {
   breakpoints,
@@ -11,7 +12,8 @@ const theme = {
   constants,
   gradients,
   palette,
-  shadows
+  shadows,
+  transitions
 }
 
 export default theme
