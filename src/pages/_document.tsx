@@ -3,16 +3,6 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet()
-    const page = renderPage((App) => (props) =>
-      sheet.collectStyles(<App {...props} />)
-    )
-    const styleTags = sheet.getStyleElement()
-    return { ...page, styleTags }
-  }
-
-
   render() {
     return (
       <Html>
@@ -29,6 +19,32 @@ class MyDocument extends Document {
         </body>
       </Html>
     )
+  }
+}
+
+/** `getInitialProps` belongs to `_document` (instead of `_app`),
+ *  it's compatible with server-side generation (SSG).
+ */
+MyDocument.getInitialProps = async (ctx) => {
+  // Render app and page and get the context of the page with collected side effects.
+  const sheet = new ServerStyleSheet()
+  const originalRenderPage = ctx.renderPage
+
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: (App) => (props) =>
+        sheet.collectStyles(<App {...props} />)
+    })
+
+  const initialProps = await Document.getInitialProps(ctx)
+
+  return {
+    ...initialProps,
+    // Styles fragment is rendered after the app and page rendering finish.
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheet.getStyleElement()
+    ]
   }
 }
 
