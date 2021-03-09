@@ -1,4 +1,4 @@
-import contentful from 'contentful'
+const contentful = require('contentful')
 
 // @ts-ignore
 import { CONTENT_TYPE } from '../../../@types/generated/contentful'
