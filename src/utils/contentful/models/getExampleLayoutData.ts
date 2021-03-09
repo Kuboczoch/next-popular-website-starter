@@ -1,12 +1,17 @@
 import getOneContentfulData from '../getOneContentfulData'
 import getContentfulData from '../getContentfulData'
 
-import { IExampleLayout, IExampleHeader, IExampleFooter, IExampleButton } from '../../../../@types/generated/contentful'
+import {
+  IExampleLayout,
+  IExampleHeader,
+  IExampleFooter,
+  IExampleButton
+} from '../../../../@types/generated/contentful'
 
 export interface IExampleLayoutData {
-  layout: IExampleLayout,
-  header: IExampleHeader,
-  footer: IExampleFooter,
+  layout: IExampleLayout
+  header: IExampleHeader
+  footer: IExampleFooter
   buttons: IExampleButton[]
 }
 

@@ -7,7 +7,7 @@ import { Asset } from 'contentful'
  * @example
  * Where `data.fields.icon` contains an Asset from Contentful
  * <ContentfulImage {...data.fields.icon} />
-**/
+ **/
 const ContentfulImage = (props: Asset) => (
   <Image
     src={'https:' + props.fields.file.url}

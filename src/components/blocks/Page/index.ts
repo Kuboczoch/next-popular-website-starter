@@ -9,7 +9,7 @@ const Page = styled('div')`
   min-height: 100vh;
   width: 100%;
 
-  background: ${props => props.theme.colors.solitude};
+  background: ${(props) => props.theme.colors.solitude};
 
   grid-template-columns: auto;
   grid-template-areas:
@@ -18,11 +18,11 @@ const Page = styled('div')`
     'footer';
   grid-template-rows: auto 1fr auto;
 
-  @media (max-width: ${props => props.theme.breakpoints.md}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     grid-template-columns: 100%;
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-template-rows: 5px auto auto;
   }
 `

@@ -16,11 +16,11 @@ const StyledButton = styled('div')`
   align-items: center;
   cursor: pointer;
   user-select: none;
-  flex-direction: ${props => props.iconAlign === 'left' ? 'row' : 'row-reverse'};
+  flex-direction: ${(props) => (props.iconAlign === 'left' ? 'row' : 'row-reverse')};
 
-  ${props => includeVariant(props, 'button')};
+  ${(props) => includeVariant(props, 'button')};
 
-  ${props => props.rounded && rounded};
+  ${(props) => props.rounded && rounded};
 `
 
 export default StyledButton

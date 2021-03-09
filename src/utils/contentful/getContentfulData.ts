@@ -9,9 +9,11 @@ const getContentfulData = async (contentType: CONTENT_TYPE) => {
    *  JSON parse and stringify is used here to eliminate unexpected behavior from contentful
    **/
   return Object.values(
-    JSON.parse(JSON.stringify({
-      ...data
-    }))
+    JSON.parse(
+      JSON.stringify({
+        ...data
+      })
+    )
   )
 }
 

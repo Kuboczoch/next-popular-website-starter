@@ -1,18 +1,13 @@
-export interface ILayoutData {
-
-}
+export interface ILayoutData {}
 
 /**
  * See getExampleLayoutData.ts for example layout
  */
 
 const getLayoutData = async (): Promise<ILayoutData> => {
-  const [] = await Promise.all([
+  const [] = await Promise.all([])
 
-  ])
-
-  return {
-  }
+  return {}
 }
 
 export default getLayoutData

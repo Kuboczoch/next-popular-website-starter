@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     line-height: 1.2;
-    color: ${props => props.theme.colors.mineShaft};
+    color: ${(props) => props.theme.colors.mineShaft};
     overflow-x: hidden;
     font-weight: 400;
   }

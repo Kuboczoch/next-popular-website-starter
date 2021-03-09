@@ -8,10 +8,12 @@ const getOneContentfulData = async (contentType: CONTENT_TYPE) => {
   /**
    *  JSON parse and stringify is used here to eliminate unexpected behavior from contentful
    **/
-  return JSON.parse(JSON.stringify({
-    fields: data[0].fields,
-    sys: data[0].sys
-  }))
+  return JSON.parse(
+    JSON.stringify({
+      fields: data[0].fields,
+      sys: data[0].sys
+    })
+  )
 }
 
 export default getOneContentfulData

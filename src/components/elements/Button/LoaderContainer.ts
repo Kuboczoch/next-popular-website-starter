@@ -6,7 +6,7 @@ const LoaderContainer = styled('div')`
   right: 0;
   bottom: 0;
   left: 0;
-  display: ${props => props.isLoading ? 'flex' : 'none'};
+  display: ${(props) => (props.isLoading ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
 `

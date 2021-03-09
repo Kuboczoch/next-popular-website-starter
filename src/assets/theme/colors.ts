@@ -1,25 +1,25 @@
 export type TColor =
-  'transparent' |
-  'white' |
-  'black' |
-  'mercury' |
-  'alto' |
-  'gray' |
-  'regentGray' |
-  'silver' |
-  'darkBlue' |
-  'dodgerBlue' |
-  'periwinkleGray' |
-  'baliHai' |
-  'solitude' |
-  'apple' |
-  'madang' |
-  'mantis' |
-  'thunderbird' |
-  'toreaBay' |
-  'azureRadiance' |
-  'oliveDrab' |
-  'mineShaft'
+  | 'transparent'
+  | 'white'
+  | 'black'
+  | 'mercury'
+  | 'alto'
+  | 'gray'
+  | 'regentGray'
+  | 'silver'
+  | 'darkBlue'
+  | 'dodgerBlue'
+  | 'periwinkleGray'
+  | 'baliHai'
+  | 'solitude'
+  | 'apple'
+  | 'madang'
+  | 'mantis'
+  | 'thunderbird'
+  | 'toreaBay'
+  | 'azureRadiance'
+  | 'oliveDrab'
+  | 'mineShaft'
 
 /**
  List of possible colors in your app.

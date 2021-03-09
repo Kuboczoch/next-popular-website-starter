@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const ButtonContainer = styled('div')`
   display: grid;
-  grid-template-columns: ${props => props.columns || 'auto 1fr'};
+  grid-template-columns: ${(props) => props.columns || 'auto 1fr'};
 `
 
 export default ButtonContainer

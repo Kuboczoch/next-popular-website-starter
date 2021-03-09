@@ -9,6 +9,7 @@ To make a style for your desired button your should write your own `variant` or 
 match your requirements.
 
 ## Styling
+
 For shape and generally design: You should make a `variant`
 
 For different colors: write your own `colorVariant`
@@ -23,13 +24,15 @@ You should avoid writing colors in it, instead use a color from prop like: `colo
 Where `unset` is one of your `colorVariants` possible states.
 
 ### Possible color variants
-  * `unset` - default look
-  * `hover` - look on hover
-  * `active` - look on active
-  * `focus` - look on focus
-  * `disabled` - look when disabled
+
+- `unset` - default look
+- `hover` - look on hover
+- `active` - look on active
+- `focus` - look on focus
+- `disabled` - look when disabled
 
 ## Expected behavior for perfect design
+
 Button should be able to fill the whole available area with itself without forcing any size.
 To reduce width of your button you can use `ButtonContainer` that is a grid element where button is wrapped by
 to reduce it from the desired side.

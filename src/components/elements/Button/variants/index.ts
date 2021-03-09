@@ -10,12 +10,11 @@ export interface variantProps {
   color: colorStates
 }
 
-export type possibleVariants =
-  'inline' |
-  'outline' |
-  'transparent'
+export type possibleVariants = 'inline' | 'outline' | 'transparent'
 
-const variants = (props: { colorStates?: colorStates }): { [index in possibleVariants]: { button?: any, text?: any } } => ({
+const variants = (props: {
+  colorStates?: colorStates
+}): { [index in possibleVariants]: { button?: any; text?: any } } => ({
   inline: inline({
     color: {
       ...colorVariants.primary,
@@ -36,7 +35,10 @@ const variants = (props: { colorStates?: colorStates }): { [index in possibleVar
   })
 })
 
-export const includeVariant = (props: { colorStates?: colorStates, variant: string }, element: string) => {
+export const includeVariant = (
+  props: { colorStates?: colorStates; variant: string },
+  element: string
+) => {
   return variants(props)[props.variant][element]
 }
 

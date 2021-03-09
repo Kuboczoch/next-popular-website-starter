@@ -10,11 +10,11 @@ const ButtonText = styled('span')`
   line-height: 25px;
   text-align: center;
   overflow-wrap: break-word;
-  transition: all ${theme.constants.transition.normal};
+  transition: all ${theme.transitions.normal};
 
-  ${props => props.isLoading && changeOpacityOnLoading};
+  ${(props) => props.isLoading && changeOpacityOnLoading};
 
-  ${props => includeVariant(props, 'text')};
+  ${(props) => includeVariant(props, 'text')};
 `
 
 export default ButtonText

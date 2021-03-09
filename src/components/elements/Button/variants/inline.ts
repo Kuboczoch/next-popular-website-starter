@@ -11,7 +11,7 @@ const inline = (props: variantProps) => ({
     background: ${colors[props.color.unset]};
     padding: 16px 30px;
     border-radius: 3px;
-    transition: all ${props => props.theme.transitions.normal};
+    transition: all ${(props) => props.theme.transitions.normal};
 
     &:hover {
       box-shadow: 0 4px 20px 0 ${hexToRGB(colors[props.color.hover], 0.3)};
@@ -23,14 +23,16 @@ const inline = (props: variantProps) => ({
       opacity: 0.7;
     }
 
-    ${props => props.disabled && css`
-      box-shadow: unset !important;
-      background: ${props => props.theme.colors.alto} !important;
-      border-color: ${props => props.theme.colors.alto} !important;
-    `};
+    ${(props) =>
+      props.disabled &&
+      css`
+        box-shadow: unset !important;
+        background: ${(props) => props.theme.colors.alto} !important;
+        border-color: ${(props) => props.theme.colors.alto} !important;
+      `};
   `,
   text: css`
-    color: ${props => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.white};
   `
 })
 

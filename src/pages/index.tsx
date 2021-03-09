@@ -4,9 +4,7 @@ import Layout from '../components/elements/Layout'
 import Homepage from '../containers/HomePage'
 import getLayoutData, { ILayoutData } from '../utils/contentful/models/getLayoutData'
 
-export interface IHomePageProps extends ILayoutData {
-
-}
+export interface IHomePageProps extends ILayoutData {}
 
 const Home = (props: IHomePageProps) => (
   <Layout {...props}>

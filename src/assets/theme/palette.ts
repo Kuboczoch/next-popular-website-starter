@@ -1,8 +1,6 @@
 import colors from './colors'
 
-export type TPalletColor =
-  'primary' |
-  'secondary'
+export type TPalletColor = 'primary' | 'secondary'
 
 const palette: {
   [index in TPalletColor]: string

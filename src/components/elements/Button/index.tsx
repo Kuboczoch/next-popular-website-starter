@@ -1,7 +1,8 @@
 import React from 'react'
 import Link, { LinkProps } from 'next/link'
 
-import { colorStates, possibleVariants } from './variants'
+import { colorStates } from './variants/_colors'
+import { possibleVariants } from './variants'
 
 import ButtonText from './ButtonText'
 import IconContainer from './IconContainer'
@@ -10,19 +11,19 @@ import StyledLink from './StyledLink'
 import LoaderContainer from './LoaderContainer'
 
 interface IButtonProps {
-  children?: null,
-  title?: React.ReactNode,
-  icon?: React.ReactNode,
-  iconAlign?: 'left' | 'right',
-  rounded?: boolean,
-  variant?: possibleVariants,
-  colorStates?: colorStates,
-  link?: LinkProps,
-  loader?: React.ReactNode,
-  isLoading?: boolean,
-  linkProps?: object,
+  children?: null
+  title?: React.ReactNode
+  icon?: React.ReactNode
+  iconAlign?: 'left' | 'right'
+  rounded?: boolean
+  variant?: possibleVariants
+  colorStates?: colorStates
+  link?: LinkProps
+  loader?: React.ReactNode
+  isLoading?: boolean
+  linkProps?: object
   buttonProps?: object
-  textProps?: object,
+  textProps?: object
   disabled?: boolean
 }
 
@@ -36,9 +37,7 @@ interface IButtonProps {
 const Button = (props: IButtonProps) => {
   const ButtonComponent = () => (
     <StyledButton {...props} {...props.buttonProps}>
-      <LoaderContainer isLoading={props.isLoading}>
-        {props.loader}
-      </LoaderContainer>
+      <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
       {props.icon && (
         <IconContainer iconAlign={props.iconAlign} disableMargin={!props.title} {...props}>
           {props.icon}
@@ -56,13 +55,13 @@ const Button = (props: IButtonProps) => {
     return (
       <Link {...props.link} passHref>
         <StyledLink {...props.linkProps}>
-          <ButtonComponent/>
+          <ButtonComponent />
         </StyledLink>
       </Link>
     )
   }
 
-  return <ButtonComponent/>
+  return <ButtonComponent />
 }
 
 const defaultProps: IButtonProps = {
