@@ -21,9 +21,9 @@ interface IButtonProps {
   link?: LinkProps
   loader?: React.ReactNode
   isLoading?: boolean
-  linkProps?: object
-  buttonProps?: object
-  textProps?: object
+  linkProps?: Record<string, unknown>
+  buttonProps?: Record<string, unknown>
+  textProps?: Record<string, unknown>
   disabled?: boolean
 }
 

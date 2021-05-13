@@ -7,6 +7,6 @@ import HomePage from '../../components/blocks/HomePage'
 
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
-const HomePageView = (props: IHomePageViewProps) => <HomePage />
+const HomePageView = ({}: IHomePageViewProps) => <HomePage />
 
 export default HomePageView

@@ -31,7 +31,7 @@ const LoaderStyle = styled('span')`
 
 interface LoaderProps {
   loaderColor?: string
-  style?: object
+  style?: Record<string, unknown>
 }
 
 const Loader = ({ loaderColor = theme.colors.black, ...props }: LoaderProps) => (

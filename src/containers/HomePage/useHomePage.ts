@@ -2,7 +2,7 @@ import { IHomePageProps } from '../../pages'
 
 export interface IHomePageStateProps {}
 
-const useHomePage = (props: IHomePageProps): IHomePageStateProps => {
+const useHomePage = ({}: IHomePageProps): IHomePageStateProps => {
   return {}
 }
 
