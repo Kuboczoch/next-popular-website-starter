@@ -1,5 +1,4 @@
 import { colorStates } from './_colors'
-
 import colorVariants from './_colorVariants'
 
 import inline from './inline'
@@ -35,8 +34,13 @@ const variants = (props: {
   })
 })
 
+export type TIncludeVariantProps = {
+  colorStates?: colorStates
+  variant: possibleVariants
+}
+
 export const includeVariant = (
-  props: { colorStates?: colorStates; variant: string },
+  props: { colorStates?: colorStates; variant: possibleVariants },
   element: string
 ) => {
   return variants(props)[props.variant][element]

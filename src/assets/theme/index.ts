@@ -6,6 +6,16 @@ import palette from './palette'
 import shadows from './shadows'
 import transitions from './transitions'
 
+export interface ITheme {
+  breakpoints: typeof breakpoints
+  colors: typeof colors
+  constants: typeof constants
+  gradients: typeof gradients
+  palette: typeof palette
+  shadows: typeof shadows
+  transitions: typeof transitions
+}
+
 const theme = {
   breakpoints,
   colors,

@@ -1,9 +1,13 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import theme from '../../../assets/theme'
 import { changeOpacityOnLoading } from './LoaderContainer'
 
-const IconContainer = styled('div')`
+const IconContainer = styled('div')<{
+  disableMargin?: boolean
+  iconAlign?: 'left' | 'right'
+  isLoading?: boolean
+}>`
   display: flex;
   justify-content: center;
   align-items: center;

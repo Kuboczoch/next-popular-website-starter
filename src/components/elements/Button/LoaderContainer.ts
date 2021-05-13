@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
-const LoaderContainer = styled('div')`
+const LoaderContainer = styled('div')<{ isLoading?: boolean }>`
   position: absolute;
   top: 0;
   right: 0;

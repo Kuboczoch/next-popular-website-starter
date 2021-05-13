@@ -34,18 +34,18 @@ interface IButtonProps {
  *     variant='outlined'
  *   />
  **/
-const Button = (props: IButtonProps) => {
+const Button = ({ title, variant = 'inline', ...props }: IButtonProps) => {
   const ButtonComponent = () => (
-    <StyledButton {...props} {...props.buttonProps}>
+    <StyledButton variant={variant} {...props} {...props.buttonProps}>
       <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
       {props.icon && (
-        <IconContainer iconAlign={props.iconAlign} disableMargin={!props.title} {...props}>
+        <IconContainer iconAlign={props.iconAlign} disableMargin={!title} {...props}>
           {props.icon}
         </IconContainer>
       )}
-      {props.title && (
-        <ButtonText {...props} {...props.textProps}>
-          {props.title}
+      {title && (
+        <ButtonText variant={variant} {...props} {...props.textProps}>
+          {title}
         </ButtonText>
       )}
     </StyledButton>

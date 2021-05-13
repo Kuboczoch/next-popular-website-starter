@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import Content from './Content'
 import Footer from './Footer'
@@ -27,8 +27,16 @@ const Page = styled('div')`
   }
 `
 
-Page.Content = Content
-Page.Footer = Footer
-Page.Header = Header
+type PageProps = typeof Page & {
+  Content: typeof Content
+  Footer: typeof Footer
+  Header: typeof Header
+}
 
-export default Page
+const PageBlock = Page as PageProps
+
+PageBlock.Content = Content
+PageBlock.Footer = Footer
+PageBlock.Header = Header
+
+export default PageBlock

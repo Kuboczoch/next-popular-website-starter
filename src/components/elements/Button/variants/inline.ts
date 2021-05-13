@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from '@emotion/css'
 
 import hexToRGB from '../../../../utils/hexToRGB'
 import colors from './_colors'

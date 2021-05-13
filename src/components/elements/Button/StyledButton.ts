@@ -1,15 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled from '@emotion/styled'
 
-import { includeVariant } from './variants'
+import { includeVariant, TIncludeVariantProps } from './variants'
 
-const rounded = css`
-  width: 25px;
-  height: 25px;
-  padding: 10px;
-  border-radius: 50%;
-`
-
-const StyledButton = styled('div')`
+const StyledButton = styled('div')<TIncludeVariantProps & { iconAlign?: 'left' | 'right' }>`
   position: relative;
   display: flex;
   justify-content: center;
@@ -19,8 +12,6 @@ const StyledButton = styled('div')`
   flex-direction: ${(props) => (props.iconAlign === 'left' ? 'row' : 'row-reverse')};
 
   ${(props) => includeVariant(props, 'button')};
-
-  ${(props) => props.rounded && rounded};
 `
 
 export default StyledButton
