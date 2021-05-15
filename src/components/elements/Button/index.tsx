@@ -34,7 +34,7 @@ interface IButtonProps {
  *     variant='outlined'
  *   />
  **/
-const Button = ({ title, variant = 'inline', ...props }: IButtonProps) => {
+const Button = ({ title, variant = 'primary', ...props }: IButtonProps) => {
   const ButtonComponent = () => (
     <StyledButton variant={variant} {...props} {...props.buttonProps}>
       <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
@@ -68,7 +68,7 @@ const defaultProps: IButtonProps = {
   title: null,
   icon: null,
   iconAlign: 'right',
-  variant: 'inline',
+  variant: 'primary',
   rounded: false,
   link: undefined,
   loader: null,

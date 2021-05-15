@@ -1,26 +1,27 @@
 import { colorStates } from './_colors'
 import colorVariants from './_colorVariants'
 
-import inline from './inline'
-import outline from './outline'
+import primary from './primary'
+import secondary from './secondary'
 import transparent from './transparent'
 
 export interface variantProps {
   color: colorStates
+  disabled?: boolean
 }
 
-export type possibleVariants = 'inline' | 'outline' | 'transparent'
+export type possibleVariants = 'primary' | 'secondary' | 'transparent'
 
 const variants = (props: {
   colorStates?: colorStates
 }): { [index in possibleVariants]: { button?: any; text?: any } } => ({
-  inline: inline({
+  primary: primary({
     color: {
       ...colorVariants.primary,
       ...props.colorStates
     }
   }),
-  outline: outline({
+  secondary: secondary({
     color: {
       ...colorVariants.secondary,
       ...props.colorStates
