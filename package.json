@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -23,6 +25,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-docs": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/addon-viewport": "^6.1.21",
+    "@storybook/node-logger": "^6.1.21",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.1.21",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",
     "@types/react-stickynode": "^3.0.1",
