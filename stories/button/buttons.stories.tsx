@@ -34,8 +34,8 @@ export const Template = (args) => <Button {...args} />
 
 export const Variants = (args) => (
   <Wrapper>
-    {Object.keys(variants({})).map((variant) => (
-      <Button {...args} variant={variant} />
+    {Object.keys(variants).map((variant) => (
+      <Button key={variant} {...args} variant={variant} />
     ))}
   </Wrapper>
 )

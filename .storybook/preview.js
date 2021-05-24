@@ -1,14 +1,17 @@
-import { ThemeProvider } from '@emotion/react'
 import { addDecorator } from '@storybook/react'
+import { withThemesProvider } from 'storybook-addon-emotion-theme'
 
 import GlobalStyle from '../src/components/elements/Layout/GlobalStyle'
-import theme from '../src/assets/theme/index'
+import theme from '../src/assets/theme'
+
+const themes = [theme]
+addDecorator(withThemesProvider(themes))
 
 addDecorator((story) => (
-  <ThemeProvider theme={theme}>
+  <>
     {GlobalStyle}
     {story()}
-  </ThemeProvider>
+  </>
 ))
 
 const customViewports = {

@@ -1,4 +1,12 @@
-import { colorStates } from './_colors'
+import { TPalletColor } from '../../../../assets/theme/palette'
+
+export type colorStates = {
+  unset: TPalletColor
+  hover: TPalletColor
+  active: TPalletColor
+  focus: TPalletColor
+  disabled: TPalletColor
+}
 
 interface colorVariant {
   [key: string]: colorStates

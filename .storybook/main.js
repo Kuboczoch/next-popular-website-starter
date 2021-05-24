@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-viewport',
     '@storybook/addon-essentials',
+    'storybook-addon-emotion-theme/dist/register',
     {
       name: '@storybook/addon-docs',
       options: {

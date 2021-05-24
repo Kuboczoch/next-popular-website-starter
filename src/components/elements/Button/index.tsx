@@ -1,21 +1,18 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Link, { LinkProps } from 'next/link'
 
-import { colorStates } from './variants/_colors'
-import { possibleVariants } from './variants'
+import variants, { possibleVariants } from './variants'
 
-import ButtonText from './ButtonText'
 import IconContainer from './IconContainer'
-import StyledButton from './StyledButton'
 import StyledLink from './StyledLink'
 import LoaderContainer from './LoaderContainer'
+import colorVariants, { colorStates } from './variants/_colorVariants'
 
 interface IButtonProps {
   children?: null
   title?: React.ReactNode
   icon?: React.ReactNode
   iconAlign?: 'left' | 'right'
-  rounded?: boolean
   variant?: possibleVariants
   colorStates?: colorStates
   link?: LinkProps
@@ -35,8 +32,16 @@ interface IButtonProps {
  *   />
  **/
 const Button = ({ title, variant = 'primary', ...props }: IButtonProps) => {
+  const Variant = useMemo(() => {
+    return variants[variant]
+  }, [variant])
+
   const ButtonComponent = () => (
-    <StyledButton variant={variant} {...props} {...props.buttonProps}>
+    <Variant.Button
+      {...props}
+      {...props.buttonProps}
+      colorStates={props.colorStates || colorVariants[variant]}
+    >
       <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
       {props.icon && (
         <IconContainer iconAlign={props.iconAlign} disableMargin={!title} {...props}>
@@ -44,11 +49,11 @@ const Button = ({ title, variant = 'primary', ...props }: IButtonProps) => {
         </IconContainer>
       )}
       {title && (
-        <ButtonText variant={variant} {...props} {...props.textProps}>
+        <Variant.Text {...props} {...props.textProps}>
           {title}
-        </ButtonText>
+        </Variant.Text>
       )}
-    </StyledButton>
+    </Variant.Button>
   )
 
   if (props.link) {
@@ -69,7 +74,6 @@ const defaultProps: IButtonProps = {
   icon: null,
   iconAlign: 'right',
   variant: 'primary',
-  rounded: false,
   link: undefined,
   loader: null,
   isLoading: false,

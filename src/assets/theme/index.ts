@@ -7,6 +7,7 @@ import shadows from './shadows'
 import transitions from './transitions'
 
 export interface ITheme {
+  name: string
   breakpoints: typeof breakpoints
   colors: typeof colors
   constants: typeof constants
@@ -17,6 +18,7 @@ export interface ITheme {
 }
 
 const theme = {
+  name: 'Default theme',
   breakpoints,
   colors,
   constants,

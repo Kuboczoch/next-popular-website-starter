@@ -1,8 +1,12 @@
 import styled from '@emotion/styled'
 
-import { includeVariant, TIncludeVariantProps } from './variants'
+import { colorStates } from './variants/_colorVariants'
 
-const StyledButton = styled('div')<TIncludeVariantProps & { iconAlign?: 'left' | 'right' }>`
+const StyledButton = styled('div')<{
+  disabled?: boolean
+  iconAlign?: 'left' | 'right'
+  colorStates: colorStates
+}>`
   position: relative;
   display: flex;
   justify-content: center;
@@ -10,8 +14,6 @@ const StyledButton = styled('div')<TIncludeVariantProps & { iconAlign?: 'left' |
   cursor: pointer;
   user-select: none;
   flex-direction: ${(props) => (props.iconAlign === 'left' ? 'row' : 'row-reverse')};
-
-  ${(props) => includeVariant(props, 'button')};
 `
 
 export default StyledButton
