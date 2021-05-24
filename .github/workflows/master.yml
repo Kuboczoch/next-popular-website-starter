@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-website:
     name: Website Build
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -17,3 +17,14 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+  build-storybook:
+      name: Storybook Build
+      runs-on: ubuntu-latest
+      timeout-minutes: 5
+      steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v2
+        - name: Install Dependencies
+          run: yarn install
+        - name: Build
+          run: yarn build-storybook
