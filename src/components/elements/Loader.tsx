@@ -1,5 +1,6 @@
+import { keyframes } from '@emotion/css'
+import styled from '@emotion/styled'
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
 
 import theme from '../../assets/theme'
 
@@ -16,7 +17,7 @@ const spinner = keyframes`
   }
 `
 
-const LoaderStyle = styled('span')`
+const LoaderStyle = styled('span')<{ loaderColor: string }>`
   display: inline-flex;
   width: 14px;
   height: 14px;

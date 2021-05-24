@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import theme from '../../../assets/theme'
-import { includeVariant } from './variants'
+import { includeVariant, TIncludeVariantProps } from './variants'
 import { changeOpacityOnLoading } from './LoaderContainer'
 
-const ButtonText = styled('span')`
+const ButtonText = styled('span')<TIncludeVariantProps & { isLoading?: boolean }>`
   font-weight: bold;
   font-size: 16px;
   line-height: 25px;
