@@ -1,5 +1,12 @@
 # next-popular-website-starter
 
+[![Build](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/master.yml)
+[![ESLint](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/lint.yml)
+
+[![dependencies Status](https://status.david-dm.org/gh/Kuboczoch/next-popular-website-starter.svg)](https://david-dm.org/Kuboczoch/next-popular-website-starter)
+[![devDependencies Status](https://status.david-dm.org/gh/Kuboczoch/next-popular-website-starter.svg?type=dev)](https://david-dm.org/Kuboczoch/next-popular-website-starter?type=dev)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Kuboczoch/next-popular-website-starter/issues)
+
 This template repo serves as a [Next.js](https://nextjs.org/) starter for anyone who is
 looking to get up and running with Next.js and TypeScript fast.
 It started with an idea for having a template to gather all collected knowledge
@@ -71,4 +78,4 @@ npx create-next-app nextjs-blog --use-yarn --example "https://github.com/Kuboczo
 * [ ] TODO List
 
 ## License
-[The Cool License](https://github.com/Kuboczoch/next-popular-website-starter/blob/master/LICENSE)
+[The Cool License](https://github.com/Kuboczoch/next-popular-website-starter/blob/master/LICENSE.md)

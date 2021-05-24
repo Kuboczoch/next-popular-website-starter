@@ -1,11 +1,11 @@
-name: eslint
+name: ESLint
 on:
   push:
   pull_request:
 
 jobs:
   eslint:
-    name: eslint
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
