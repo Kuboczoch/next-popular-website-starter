@@ -2,9 +2,12 @@ import styled from '@emotion/styled'
 import { Meta } from '@storybook/react'
 import React from 'react'
 
+import marginHelper from '../../src/assets/styleHelper/marginHelper'
 import Button from '../../src/components/elements/Button'
+import colorVariants from '../../src/components/elements/Button/variants/_colorVariants'
 import Loader from '../../src/components/elements/Loader'
 import variants from '../../src/components/elements/Button/variants'
+import { TypographyP } from '../../src/components/elements/Typography'
 
 const Wrapper = styled('div')`
   display: grid;
@@ -39,3 +42,27 @@ export const Variants = (args) => (
     ))}
   </Wrapper>
 )
+
+export const ColorVariants = (args) => {
+  const colorVariantsKeys = Object.keys(colorVariants)
+  const variantsKeys = Object.keys(variants)
+  return (
+    <>
+      {colorVariantsKeys.map((colorVariant) => (
+        <React.Fragment key={colorVariant}>
+          <TypographyP className={marginHelper.vertical.medium}>{colorVariant}</TypographyP>
+          <Wrapper>
+            {variantsKeys.map((variant) => (
+              <Button
+                key={variant}
+                {...args}
+                variant={variant}
+                colorStates={colorVariants[colorVariant]}
+              />
+            ))}
+          </Wrapper>
+        </React.Fragment>
+      ))}
+    </>
+  )
+}
