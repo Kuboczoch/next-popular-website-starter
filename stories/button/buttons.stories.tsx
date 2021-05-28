@@ -27,7 +27,7 @@ export default {
     }
   },
   args: {
-    title: 'Button',
+    children: 'Click me!',
     icon: false,
     loader: <Loader />
   }

@@ -9,8 +9,7 @@ import LoaderContainer from './LoaderContainer'
 import colorVariants, { colorStates } from './variants/_colorVariants'
 
 interface IButtonProps {
-  children?: null
-  title?: React.ReactNode
+  children?: React.ReactNode
   icon?: React.ReactNode
   iconAlign?: 'left' | 'right'
   variant?: possibleVariants
@@ -31,7 +30,7 @@ interface IButtonProps {
  *     variant='outlined'
  *   />
  **/
-const Button = ({ title, variant = 'primary', ...props }: IButtonProps) => {
+const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps) => {
   const Variant = useMemo(() => {
     return variants[variant]
   }, [variant])
@@ -44,13 +43,13 @@ const Button = ({ title, variant = 'primary', ...props }: IButtonProps) => {
     >
       <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
       {props.icon && (
-        <IconContainer iconAlign={props.iconAlign} disableMargin={!title} {...props}>
+        <IconContainer iconAlign={props.iconAlign} {...props}>
           {props.icon}
         </IconContainer>
       )}
-      {title && (
+      {children && (
         <Variant.Text {...props} {...props.textProps}>
-          {title}
+          {children}
         </Variant.Text>
       )}
     </Variant.Button>
@@ -70,7 +69,7 @@ const Button = ({ title, variant = 'primary', ...props }: IButtonProps) => {
 }
 
 const defaultProps: IButtonProps = {
-  title: null,
+  children: 'Click me!',
   icon: null,
   iconAlign: 'right',
   variant: 'primary',

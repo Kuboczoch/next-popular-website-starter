@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Layout from '../components/elements/Layout'
-import Homepage from '../containers/HomePage'
+import HomePage from '../containers/HomePage'
 import getLayoutData, { ILayoutData } from '../utils/contentful/models/getLayoutData'
 
 export interface IHomePageProps extends ILayoutData {}
 
 const Home = (props: IHomePageProps) => (
   <Layout {...props}>
-    <Homepage {...props} />
+    <HomePage {...props} />
   </Layout>
 )
 
