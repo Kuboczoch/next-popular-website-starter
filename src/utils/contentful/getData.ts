@@ -17,7 +17,8 @@ const getData = async (contentType: CONTENT_TYPE) => {
   })
 
   const TypeEntries = await client.getEntries({
-    content_type: contentType
+    content_type: contentType,
+    include: 10
   })
 
   return TypeEntries.items
