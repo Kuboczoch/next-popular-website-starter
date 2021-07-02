@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 
 import theme from '../../../assets/theme'
 import { changeOpacityOnLoading } from './LoaderContainer'
+import { colorStates } from './variants/_colorVariants'
 
-const ButtonText = styled('span')<{ isLoading?: boolean }>`
+const ButtonText = styled('span')<{ isLoading?: boolean; colorStates: colorStates }>`
   font-weight: bold;
   font-size: 16px;
   line-height: 25px;

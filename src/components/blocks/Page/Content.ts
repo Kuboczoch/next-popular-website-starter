@@ -6,7 +6,7 @@ const Content = styled('main')`
   min-height: 125px;
   z-index: 1;
 
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.npwBase01};
 
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     margin-top: 125px;

@@ -1,11 +1,11 @@
-import { TPalletColor } from '../../../../assets/theme/palette'
+import { TColor } from '../../../../assets/theme/colors'
 
 export type colorStates = {
-  unset: TPalletColor
-  hover: TPalletColor
-  active: TPalletColor
-  focus: TPalletColor
-  disabled: TPalletColor
+  unset: TColor
+  hover: TColor
+  active: TColor
+  focus: TColor
+  disabled: TColor
 }
 
 interface colorVariant {
@@ -14,25 +14,25 @@ interface colorVariant {
 
 const colorVariants: colorVariant = {
   primary: {
-    unset: 'primary',
-    hover: 'primary',
-    active: 'primary',
-    focus: 'primary',
-    disabled: 'gray'
+    unset: 'npwPrimary',
+    hover: 'npwPrimaryHover',
+    active: 'npwPrimaryActive',
+    focus: 'npwPrimaryActive',
+    disabled: 'npwPrimaryActive'
   },
   secondary: {
-    unset: 'secondary',
-    hover: 'secondary',
-    active: 'secondary',
-    focus: 'secondary',
-    disabled: 'transparent'
+    unset: 'npwPositive',
+    hover: 'npwPositiveHover',
+    active: 'npwPositiveHover',
+    focus: 'npwPositiveHover',
+    disabled: 'npwSuccessBgNight'
   },
   transparent: {
     unset: 'transparent',
     hover: 'transparent',
     active: 'transparent',
     focus: 'transparent',
-    disabled: 'gray'
+    disabled: 'transparent'
   }
 }
 

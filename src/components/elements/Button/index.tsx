@@ -48,7 +48,11 @@ const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps
         </IconContainer>
       )}
       {children && (
-        <Variant.Text {...props} {...props.textProps}>
+        <Variant.Text
+          {...props}
+          {...props.textProps}
+          colorStates={props.colorStates || colorVariants[variant]}
+        >
           {children}
         </Variant.Text>
       )}

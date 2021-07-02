@@ -35,7 +35,7 @@ interface LoaderProps {
   style?: Record<string, unknown>
 }
 
-const Loader = ({ loaderColor = theme.colors.black, ...props }: LoaderProps) => (
+const Loader = ({ loaderColor = theme.colors.npwBase09, ...props }: LoaderProps) => (
   <LoaderStyle loaderColor={loaderColor} {...props} />
 )
 
