@@ -9,7 +9,7 @@ interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
 const HomePageView = ({}: IHomePageViewProps) => (
   <HomePage>
-    <h1>Hello my awesome template!</h1>
+    <h1>next-popular-website-starter</h1>
   </HomePage>
 )
 

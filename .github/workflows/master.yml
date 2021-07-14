@@ -1,11 +1,10 @@
 name: Website Build
 on:
   push:
-    branches:
-      - 'master'
+    branches: [ master ]
   pull_request:
-    branches:
-      - 'master'
+    branches: [ master ]
+    types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
   eslint:
@@ -34,10 +33,24 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+  lhci:
+    name: Lighthouse check
+    if: ${{ github.event.label.name == 'lighthouse-check' }}
+    runs-on: ubuntu-latest
+    needs: build-website
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Lighthouse Check
+        run: |
+          npm install -g @lhci/cli@0.8.x
+          lhci autorun
   build-storybook:
       name: Storybook Build
       runs-on: ubuntu-latest
-      needs: eslint
       timeout-minutes: 5
       steps:
         - name: Checkout Repo
@@ -46,3 +59,4 @@ jobs:
           run: yarn install
         - name: Build
           run: yarn build-storybook
+
