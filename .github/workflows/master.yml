@@ -7,38 +7,37 @@ on:
     types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
-  eslint:
-    name: ESLint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: install node v14
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: yarn install
-        run: yarn install
-      - name: eslint
-        uses: icrawl/action-eslint@v1
   install-dependencies:
     name: Install dependencies
     runs-on: ubuntu-latest
-    needs: eslint
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Install Dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: Cache node_modules
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    needs: install-dependencies
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+      - name: eslint
+        uses: icrawl/action-eslint@v1
   build-website:
     name: Website Build
     runs-on: ubuntu-latest
-    needs: install-dependencies
+    needs: eslint
     timeout-minutes: 5
     steps:
       - name: Checkout Repo
@@ -47,14 +46,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
       - name: Build
         run: yarn build
-      - name: Upload next-app-build
-        uses: actions/upload-artifact@v2
+      - name: Cache next-app-build
+        uses: actions/cache@v2
         with:
-          name: next-app-build
-          path: .next
+          path: '.next'
+          key: ${{ runner.os }}-next-${{ hashFiles('yarn.lock') }}
   lhci:
     name: Lighthouse check
     if: ${{ contains(github.event.pull_request.labels.*.name, 'lighthouse-check') }}
@@ -67,15 +66,15 @@ jobs:
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: Download next-app-build
-        uses: actions/download-artifact@v2
+          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+      - name: Cache next-app-build
+        uses: actions/cache@v2
         with:
-          name: next-app-build
-          path: .next
+          path: '.next'
+          key: ${{ runner.os }}-next-${{ hashFiles('yarn.lock') }}
       - name: Lighthouse Check
         run: |
-          npm install -g @lhci/cli@0.8.x
+          sudo npm install -g @lhci/cli@0.8.x
           npm run lighthouse-check
       - name: Upload lighthouse-check results
         uses: actions/upload-artifact@v2
@@ -87,7 +86,7 @@ jobs:
   build-storybook:
       name: Storybook Build
       runs-on: ubuntu-latest
-      needs: install-dependencies
+      needs: eslint
       timeout-minutes: 5
       steps:
         - name: Checkout Repo
@@ -96,7 +95,7 @@ jobs:
           uses: actions/cache@v2
           with:
             path: '**/node_modules'
-            key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+            key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
         - name: Build
           run: yarn build-storybook
 
