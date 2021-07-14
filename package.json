@@ -9,7 +9,8 @@
     "export": "next export",
     "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lighthouse-check": "lhci autorun"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
