@@ -21,16 +21,33 @@ jobs:
         run: yarn install
       - name: eslint
         uses: icrawl/action-eslint@v1
-  build-website:
-    name: Website Build
+  install-dependencies:
+    name: Install dependencies
     runs-on: ubuntu-latest
     needs: eslint
-    timeout-minutes: 5
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Install Dependencies
         run: yarn install
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+  build-website:
+    name: Website Build
+    runs-on: ubuntu-latest
+    needs: install-dependencies
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Build
         run: yarn build
       - name: Upload next-app-build
@@ -46,17 +63,16 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: yarn install
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Download next-app-build
         uses: actions/download-artifact@v2
         with:
           name: next-app-build
           path: .next
-      - name: install node v14
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
       - name: Lighthouse Check
         run: |
           npm install -g @lhci/cli@0.8.x
@@ -71,13 +87,16 @@ jobs:
   build-storybook:
       name: Storybook Build
       runs-on: ubuntu-latest
-      needs: eslint
+      needs: install-dependencies
       timeout-minutes: 5
       steps:
         - name: Checkout Repo
           uses: actions/checkout@v2
-        - name: Install Dependencies
-          run: yarn install
+        - name: Cache node_modules
+          uses: actions/cache@v2
+          with:
+            path: '**/node_modules'
+            key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
         - name: Build
           run: yarn build-storybook
 
