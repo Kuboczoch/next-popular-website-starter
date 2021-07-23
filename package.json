@@ -10,7 +10,8 @@
     "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lighthouse-check": "lhci autorun"
+    "lighthouse-check": "lhci autorun",
+    "generate-elements": "node cli/index.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -20,6 +21,7 @@
     "contentful": "^8.3.5",
     "contentful-management": "^7.22.2",
     "dotenv": "^10.0.0",
+    "inquirer": "^8.1.2",
     "next": "^10.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
