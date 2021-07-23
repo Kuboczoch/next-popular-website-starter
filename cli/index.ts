@@ -1,4 +1,4 @@
-import inquirer from 'inquirer'
+import * as inquirer from 'inquirer'
 import * as fs from 'fs'
 
 import pageTemplate from './templates/pages/pageTemplate'
