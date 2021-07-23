@@ -11,7 +11,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lighthouse-check": "lhci autorun",
-    "generate-elements": "node cli/index.js"
+    "generate-elements": "tsc cli/index.ts && node cli/index.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
