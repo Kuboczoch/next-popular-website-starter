@@ -1,13 +1,13 @@
 "use strict";
 exports.__esModule = true;
-var inquirer_1 = require("inquirer");
+var inquirer = require("inquirer");
 var fs = require("fs");
 var pageTemplate_1 = require("./templates/pages/pageTemplate");
 var blockTemplate_1 = require("./templates/blocks/blockTemplate");
 var indexTemplate_1 = require("./templates/containers/indexTemplate");
 var pageViewTemplate_1 = require("./templates/containers/pageViewTemplate");
 var usePageTemplate_1 = require("./templates/containers/usePageTemplate");
-inquirer_1["default"]
+inquirer
     .prompt([
     {
         type: 'list',
