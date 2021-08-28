@@ -20,7 +20,7 @@
     "contentful": "^8.3.5",
     "contentful-management": "^7.22.2",
     "dotenv": "^10.0.0",
-    "next": "^10.2.2",
+    "next": "^11.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -34,7 +34,7 @@
     "@storybook/node-logger": "^6.1.21",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.1.21",
-    "@types/node": "^15.6.0",
+    "@types/node": "^16.7.4",
     "@types/react": "^17.0.6",
     "@types/react-stickynode": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
