@@ -20,7 +20,7 @@
     "contentful": "^8.3.5",
     "contentful-management": "^7.22.2",
     "dotenv": "^10.0.0",
-    "next": "^11.1.0",
+    "next": "^11.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
