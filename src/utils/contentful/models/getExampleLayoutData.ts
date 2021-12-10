@@ -1,3 +1,4 @@
+// @ts-nocheck
 import getOneContentfulData from '../getOneContentfulData'
 import getContentfulData from '../getContentfulData'
 
@@ -17,10 +18,10 @@ export interface IExampleLayoutData {
 
 const getExampleLayoutData = async (): Promise<IExampleLayoutData> => {
   const [layout, header, footer, buttons] = await Promise.all([
-    getOneContentfulData('layout') as Promise<IExampleLayout>,
-    getOneContentfulData('header') as Promise<IExampleHeader>,
-    getOneContentfulData('footer') as Promise<IExampleFooter>,
-    getContentfulData('button') as Promise<IExampleButton[]>
+    getOneContentfulData<IExampleLayout>('layout'),
+    getOneContentfulData<IExampleHeader>('header'),
+    getOneContentfulData<IExampleFooter>('footer'),
+    getContentfulData<IExampleButton>('button')
   ])
 
   return {

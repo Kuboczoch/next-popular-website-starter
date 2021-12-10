@@ -1,8 +1,7 @@
 import getData from './getData'
-// @ts-ignore
 import { CONTENT_TYPE } from '../../../@types/generated/contentful'
 
-const getContentfulData = async (contentType: CONTENT_TYPE) => {
+const getContentfulData = async <T>(contentType: CONTENT_TYPE): Promise<T[]> => {
   const data = await getData(contentType)
 
   /**

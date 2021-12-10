@@ -1,9 +1,8 @@
 const contentful = require('contentful')
-
-// @ts-ignore
+import { Entry } from 'contentful'
 import { CONTENT_TYPE } from '../../../@types/generated/contentful'
 
-const getData = async (contentType: CONTENT_TYPE) => {
+const getData = async (contentType: CONTENT_TYPE): Promise<Entry<unknown>[]> => {
   const spaceId = process.env.CONTENTFUL_SPACE_ID
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN
 
