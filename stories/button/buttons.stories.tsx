@@ -6,7 +6,7 @@ import marginHelper from '../../src/assets/styleHelper/marginHelper'
 import Button from '../../src/components/elements/Button'
 import colorVariants from '../../src/components/elements/Button/variants/_colorVariants'
 import Loader from '../../src/components/elements/Loader'
-import variants from '../../src/components/elements/Button/variants'
+import variants, { possibleVariants } from '../../src/components/elements/Button/variants'
 import { TypographyP } from '../../src/components/elements/Typography'
 
 const Wrapper = styled('div')`
@@ -33,19 +33,19 @@ export default {
   }
 } as Meta
 
-export const Template = (args) => <Button {...args} />
+export const Template: React.FC = (args) => <Button {...args} />
 
-export const Variants = (args) => (
+export const Variants: React.FC = (args) => (
   <Wrapper>
-    {Object.keys(variants).map((variant) => (
+    {(Object.keys(variants) as possibleVariants[]).map((variant) => (
       <Button key={variant} {...args} variant={variant} />
     ))}
   </Wrapper>
 )
 
-export const ColorVariants = (args) => {
+export const ColorVariants: React.FC = (args) => {
   const colorVariantsKeys = Object.keys(colorVariants)
-  const variantsKeys = Object.keys(variants)
+  const variantsKeys = Object.keys(variants) as possibleVariants[]
   return (
     <>
       {colorVariantsKeys.map((colorVariant) => (
