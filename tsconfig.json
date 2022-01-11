@@ -19,7 +19,8 @@
     "jsx": "preserve",
     "strictNullChecks": true,
     "noImplicitAny": true,
-    "incremental": true
+    "incremental": true,
+    "noUncheckedIndexedAccess": true
   },
   "include": [
     "next-env.d.ts",
