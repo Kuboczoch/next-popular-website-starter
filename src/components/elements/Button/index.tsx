@@ -39,7 +39,7 @@ const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps
     <Variant.Button
       {...props}
       {...props.buttonProps}
-      colorStates={props.colorStates || colorVariants[variant]}
+      colorStates={(props.colorStates || colorVariants[variant]) as colorStates}
     >
       <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
       {props.icon && (
@@ -51,7 +51,7 @@ const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps
         <Variant.Text
           {...props}
           {...props.textProps}
-          colorStates={props.colorStates || colorVariants[variant]}
+          colorStates={(props.colorStates || colorVariants[variant]) as colorStates}
         >
           {children}
         </Variant.Text>
