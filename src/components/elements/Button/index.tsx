@@ -26,9 +26,10 @@ interface IButtonProps {
 /**
  * @example
  *   <Button
- *     title='My Awesome title!'
  *     variant='outlined'
- *   />
+ *   >
+ *    My awesome text!
+ *   </Button>
  **/
 const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps) => {
   const Variant = useMemo(() => {
