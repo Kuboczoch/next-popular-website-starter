@@ -3,8 +3,6 @@
 [![Build](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/master.yml)
 [![ESLint](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/lint.yml)
 
-[![dependencies Status](https://status.david-dm.org/gh/Kuboczoch/next-popular-website-starter.svg)](https://david-dm.org/Kuboczoch/next-popular-website-starter)
-[![devDependencies Status](https://status.david-dm.org/gh/Kuboczoch/next-popular-website-starter.svg?type=dev)](https://david-dm.org/Kuboczoch/next-popular-website-starter?type=dev)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Kuboczoch/next-popular-website-starter/issues)
 
 This template repo serves as a [Next.js](https://nextjs.org/) starter for anyone who is
@@ -49,33 +47,6 @@ npx create-next-app nextjs-blog --use-yarn --example "https://github.com/Kuboczo
 
 * Primitive way.
   Download this repo and change .git configuration.
-
-## Data Structure
-
-// TODO
-
-## Features
-
-### Blocks:
-* [x] Page layout
-
-
-### Elements:
-* [x] Button
-* [x] Responsive Container
-* [x] Contentful Image
-
-
-### Miscellaneous:
-* [x] Color pallet
-* [x] Colors
-
-### Utils:
-* [x] Contentful data querying
-
-## TODO:
-
-* [ ] TODO List
 
 ## License
 [The Cool License](https://github.com/Kuboczoch/next-popular-website-starter/blob/master/LICENSE.md)
