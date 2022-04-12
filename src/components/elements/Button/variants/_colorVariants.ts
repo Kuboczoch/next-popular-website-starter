@@ -1,4 +1,4 @@
-import { TColor } from '../../../../assets/theme/colors'
+import type { TColor } from '$/assets/theme/colors'
 
 export type colorStates = {
   unset: TColor
@@ -18,22 +18,22 @@ const colorVariants: colorVariant = {
     hover: 'npwPrimaryHover',
     active: 'npwPrimaryActive',
     focus: 'npwPrimaryActive',
-    disabled: 'npwPrimaryActive'
+    disabled: 'npwPrimaryActive',
   },
   secondary: {
     unset: 'npwPositive',
     hover: 'npwPositiveHover',
     active: 'npwPositiveHover',
     focus: 'npwPositiveHover',
-    disabled: 'npwSuccessBgNight'
+    disabled: 'npwSuccessBgNight',
   },
   transparent: {
     unset: 'transparent',
     hover: 'transparent',
     active: 'transparent',
     focus: 'transparent',
-    disabled: 'transparent'
-  }
+    disabled: 'transparent',
+  },
 }
 
 export default colorVariants

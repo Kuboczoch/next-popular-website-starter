@@ -1,5 +1,5 @@
+import type { Asset } from 'contentful'
 import Image from 'next/image'
-import { Asset } from 'contentful'
 
 /**
  * An easy way to include Contentful Image with Next.js Image tag

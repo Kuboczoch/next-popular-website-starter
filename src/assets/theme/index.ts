@@ -22,7 +22,7 @@ const theme = {
   constants,
   gradients,
   shadows,
-  transitions
+  transitions,
 }
 
 export default theme

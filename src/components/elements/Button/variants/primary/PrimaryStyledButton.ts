@@ -1,11 +1,16 @@
-import { css, Theme } from '@emotion/react'
+import type { Theme } from '@emotion/react'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-import hexToRGB from '../../../../../utils/hexToRGB'
-import StyledButton from '../../StyledButton'
-import { colorStates } from '../_colorVariants'
+import hexToRGB from '$/utils/hexToRGB'
 
-const disabledStyle = (props: { theme: Theme; colorStates: colorStates }) => css`
+import StyledButton from '../../StyledButton'
+import type { colorStates } from '../_colorVariants'
+
+const disabledStyle = (props: {
+  theme: Theme
+  colorStates: colorStates
+}) => css`
   box-shadow: unset;
   background: ${props.theme.colors[props.colorStates.disabled]};
   border-color: ${props.theme.colors[props.colorStates.disabled]};
@@ -19,7 +24,8 @@ const disabledStyle = (props: { theme: Theme; colorStates: colorStates }) => css
 `
 
 const PrimaryStyledButton = styled(StyledButton)`
-  box-shadow: 0 4px 20px 0 ${(props) => hexToRGB(props.theme.colors[props.colorStates.unset], 0.3)};
+  box-shadow: 0 4px 20px 0
+    ${(props) => hexToRGB(props.theme.colors[props.colorStates.unset], 0.3)};
   border: 2px solid ${(props) => props.theme.colors[props.colorStates.unset]};
   background: ${(props) => props.theme.colors[props.colorStates.unset]};
   padding: 16px 30px;

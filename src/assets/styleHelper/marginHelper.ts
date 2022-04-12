@@ -16,8 +16,8 @@ const marginHelper = {
   vertical: {
     small: smallVertical,
     medium: mediumVertical,
-    large: largeVertical
-  }
+    large: largeVertical,
+  },
 }
 
 export default marginHelper

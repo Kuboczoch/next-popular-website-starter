@@ -1,4 +1,4 @@
-import { IHomePageProps } from '../../pages'
+import type { IHomePageProps } from '$/pages'
 
 export interface IHomePageStateProps {}
 

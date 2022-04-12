@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { IHomePageProps } from '../../pages'
-import { IHomePageStateProps } from './useHomePage'
+import HomePage from '$/components/blocks/HomePage'
+import type { IHomePageProps } from '$/pages'
 
-import HomePage from '../../components/blocks/HomePage'
+import type { IHomePageStateProps } from './useHomePage'
 
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 

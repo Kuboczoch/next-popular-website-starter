@@ -1,13 +1,14 @@
 import styled from '@emotion/styled'
-import { Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 import React from 'react'
 
-import marginHelper from '../../src/assets/styleHelper/marginHelper'
-import Button from '../../src/components/elements/Button'
-import colorVariants from '../../src/components/elements/Button/variants/_colorVariants'
-import Loader from '../../src/components/elements/Loader'
-import variants, { possibleVariants } from '../../src/components/elements/Button/variants'
-import { TypographyP } from '../../src/components/elements/Typography'
+import marginHelper from '$/assets/styleHelper/marginHelper'
+import Button from '$/components/elements/Button'
+import type { possibleVariants } from '$/components/elements/Button/variants'
+import variants from '$/components/elements/Button/variants'
+import colorVariants from '$/components/elements/Button/variants/_colorVariants'
+import Loader from '$/components/elements/Loader'
+import { TypographyP } from '$/components/elements/Typography'
 
 const Wrapper = styled('div')`
   display: grid;
@@ -20,17 +21,17 @@ export default {
   component: Button,
   argTypes: {
     icon: {
-      control: false
+      control: false,
     },
     loader: {
-      control: false
-    }
+      control: false,
+    },
   },
   args: {
     children: 'Click me!',
     icon: false,
-    loader: <Loader />
-  }
+    loader: <Loader />,
+  },
 } as Meta
 
 export const Template: React.FC = (args) => <Button {...args} />
@@ -50,7 +51,9 @@ export const ColorVariants: React.FC = (args) => {
     <>
       {colorVariantsKeys.map((colorVariant) => (
         <React.Fragment key={colorVariant}>
-          <TypographyP className={marginHelper.vertical.medium}>{colorVariant}</TypographyP>
+          <TypographyP className={marginHelper.vertical.medium}>
+            {colorVariant}
+          </TypographyP>
           <Wrapper>
             {variantsKeys.map((variant) => (
               <Button

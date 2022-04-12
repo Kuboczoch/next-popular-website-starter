@@ -1,7 +1,7 @@
 import { injectGlobal } from '@emotion/css'
 
-import resetStyle from './resetStyle'
 import animationsStyle from './animationsStyle'
+import resetStyle from './resetStyle'
 
 const GlobalStyle = injectGlobal`
   ${resetStyle};

@@ -212,7 +212,7 @@ const colors: {
   npwSupport19: '#d2e9a2',
   npwSupport20: '#aadc42',
   npwSupport21: '#a0c5df',
-  npwSupport22: '#3c7ba8'
+  npwSupport22: '#3c7ba8',
 }
 
 export default colors

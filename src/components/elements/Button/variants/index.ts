@@ -1,8 +1,8 @@
-import StyledButton from '../StyledButton'
-import ButtonText from '../ButtonText'
+import type ButtonText from '../ButtonText'
+import type StyledButton from '../StyledButton'
 
-import PrimaryStyledButton from './primary/PrimaryStyledButton'
 import PrimaryButtonText from './primary/PrimaryButtonText'
+import PrimaryStyledButton from './primary/PrimaryStyledButton'
 
 export type possibleVariants = 'primary'
 
@@ -14,8 +14,8 @@ type TVariant = {
 const variants: { [index in possibleVariants]: TVariant } = {
   primary: {
     Button: PrimaryStyledButton,
-    Text: PrimaryButtonText
-  }
+    Text: PrimaryButtonText,
+  },
 }
 
 export default variants

@@ -1,7 +1,10 @@
-import getData from './getData'
-import { CONTENT_TYPE } from '../../../@types/generated/contentful'
+import type { CONTENT_TYPE } from '$/types/generated/contentful'
 
-const getOneContentfulData = async <T>(contentType: CONTENT_TYPE): Promise<T> => {
+import getData from './getData'
+
+const getOneContentfulData = async <T>(
+  contentType: CONTENT_TYPE,
+): Promise<T> => {
   const data = await getData(contentType)
 
   /**
@@ -10,8 +13,8 @@ const getOneContentfulData = async <T>(contentType: CONTENT_TYPE): Promise<T> =>
   return JSON.parse(
     JSON.stringify({
       fields: data[0]?.fields,
-      sys: data[0]?.sys
-    })
+      sys: data[0]?.sys,
+    }),
   )
 }
 

@@ -1,13 +1,13 @@
 // @ts-nocheck
-import getOneContentfulData from '../getOneContentfulData'
-import getContentfulData from '../getContentfulData'
-
-import {
+import type {
   IExampleLayout,
   IExampleHeader,
   IExampleFooter,
-  IExampleButton
-} from '../../../../@types/generated/contentful'
+  IExampleButton,
+} from '$/types/generated/contentful'
+
+import getContentfulData from '../getContentfulData'
+import getOneContentfulData from '../getOneContentfulData'
 
 export interface IExampleLayoutData {
   layout: IExampleLayout
@@ -21,14 +21,14 @@ const getExampleLayoutData = async (): Promise<IExampleLayoutData> => {
     getOneContentfulData<IExampleLayout>('layout'),
     getOneContentfulData<IExampleHeader>('header'),
     getOneContentfulData<IExampleFooter>('footer'),
-    getContentfulData<IExampleButton>('button')
+    getContentfulData<IExampleButton>('button'),
   ])
 
   return {
     layout,
     header,
     footer,
-    buttons
+    buttons,
   }
 }
 

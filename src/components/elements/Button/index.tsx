@@ -1,12 +1,14 @@
+import type { LinkProps } from 'next/link'
+import Link from 'next/link'
 import React, { useMemo } from 'react'
-import Link, { LinkProps } from 'next/link'
-
-import variants, { possibleVariants } from './variants'
 
 import IconContainer from './IconContainer'
-import StyledLink from './StyledLink'
 import LoaderContainer from './LoaderContainer'
-import colorVariants, { colorStates } from './variants/_colorVariants'
+import StyledLink from './StyledLink'
+import variants from './variants'
+import type { possibleVariants } from './variants'
+import type { colorStates } from './variants/_colorVariants'
+import colorVariants from './variants/_colorVariants'
 
 interface IButtonProps {
   children?: React.ReactNode
@@ -31,7 +33,11 @@ interface IButtonProps {
  *    My awesome text!
  *   </Button>
  **/
-const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps) => {
+const Button = ({
+  children = null,
+  variant = 'primary',
+  ...props
+}: IButtonProps) => {
   const Variant = useMemo(() => {
     return variants[variant]
   }, [variant])
@@ -42,7 +48,9 @@ const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps
       {...props.buttonProps}
       colorStates={(props.colorStates || colorVariants[variant]) as colorStates}
     >
-      <LoaderContainer isLoading={props.isLoading}>{props.loader}</LoaderContainer>
+      <LoaderContainer isLoading={props.isLoading}>
+        {props.loader}
+      </LoaderContainer>
       {props.icon && (
         <IconContainer iconAlign={props.iconAlign} {...props}>
           {props.icon}
@@ -52,7 +60,9 @@ const Button = ({ children = null, variant = 'primary', ...props }: IButtonProps
         <Variant.Text
           {...props}
           {...props.textProps}
-          colorStates={(props.colorStates || colorVariants[variant]) as colorStates}
+          colorStates={
+            (props.colorStates || colorVariants[variant]) as colorStates
+          }
         >
           {children}
         </Variant.Text>
@@ -83,7 +93,7 @@ const defaultProps: IButtonProps = {
   isLoading: false,
   linkProps: {},
   buttonProps: {},
-  textProps: {}
+  textProps: {},
 }
 
 Button.defaultProps = defaultProps

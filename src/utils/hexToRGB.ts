@@ -1,4 +1,4 @@
-import { TColor } from '../assets/theme/colors'
+import type { TColor } from '$/assets/theme/colors'
 
 function hexToRGB(hex: TColor | string, alpha?: number) {
   try {

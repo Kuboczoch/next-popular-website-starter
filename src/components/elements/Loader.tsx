@@ -2,7 +2,7 @@ import { keyframes } from '@emotion/css'
 import styled from '@emotion/styled'
 import React from 'react'
 
-import theme from '../../assets/theme'
+import theme from '$/assets/theme'
 
 const spinner = keyframes`
   0% {
@@ -35,8 +35,9 @@ interface LoaderProps {
   style?: Record<string, unknown>
 }
 
-const Loader = ({ loaderColor = theme.colors.npwBase09, ...props }: LoaderProps) => (
-  <LoaderStyle loaderColor={loaderColor} {...props} />
-)
+const Loader = ({
+  loaderColor = theme.colors.npwBase09,
+  ...props
+}: LoaderProps) => <LoaderStyle loaderColor={loaderColor} {...props} />
 
 export default Loader

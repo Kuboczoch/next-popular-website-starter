@@ -5,10 +5,9 @@
     "node": true
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -16,15 +15,126 @@
     "sourceType": "module"
   },
   "plugins": [
-    "eslint-plugin-prettier",
-    "@typescript-eslint"
+    "import",
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-empty-interface": [
+      "off",
+      {
+        "allowSingleExtends": true
+      }
+    ],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-var-requires": "off",
-    "prettier/prettier": "error"
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "object": false,
+          "{}": false
+        },
+        "extendDefaults": true
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "bracketSpacing": true,
+        "jsxSingleQuote": true,
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "useTabs": false,
+        "endOfLine": "crlf",
+        "parser": "typescript"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "$/components/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/types/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/assets/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/containers/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/pages/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/pages",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/providers/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "$/utils/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "./**",
+            "group": "index"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          [
+            "sibling",
+            "index"
+          ]
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "warnOnUnassignedImports": true
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "**/../components/**",
+              "**/../assets/**",
+              "**/../pages/**",
+              "**/../hooks/**",
+              "**/../utils/**",
+              "**/@types/**",
+              "!$/**"
+            ],
+            "message": "Use `$/` alias"
+          }
+        ]
+      }
+    ]
   }
 }

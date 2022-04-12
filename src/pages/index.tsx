@@ -1,9 +1,10 @@
-import { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 import React from 'react'
 
-import Layout from '../components/elements/Layout'
-import HomePage from '../containers/HomePage'
-import getLayoutData, { ILayoutData } from '../utils/contentful/models/getLayoutData'
+import Layout from '$/components/elements/Layout'
+import HomePage from '$/containers/HomePage'
+import getLayoutData from '$/utils/contentful/models/getLayoutData'
+import type { ILayoutData } from '$/utils/contentful/models/getLayoutData'
 
 export interface IHomePageProps extends ILayoutData {}
 
@@ -18,8 +19,8 @@ export const getStaticProps: GetStaticProps<IHomePageProps> = async () => {
 
   return {
     props: {
-      layout
-    }
+      layout,
+    },
   }
 }
 
