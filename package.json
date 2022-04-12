@@ -10,7 +10,9 @@
     "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lighthouse-check": "lhci autorun"
+    "lighthouse-check": "lhci autorun",
+    "check-style": "eslint './{src,public}/**/*.{ts,tsx,js}'",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",

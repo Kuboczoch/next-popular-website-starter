@@ -51,7 +51,7 @@
         "trailingComma": "all",
         "tabWidth": 2,
         "useTabs": false,
-        "endOfLine": "crlf",
+        "endOfLine": "lf",
         "parser": "typescript"
       }
     ],
