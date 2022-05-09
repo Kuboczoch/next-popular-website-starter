@@ -3,13 +3,12 @@ import type { ReactChild } from 'react'
 import React from 'react'
 
 import Page from '$/components/blocks/Page'
-import type { ILayoutData } from '$/utils/contentful/models/getLayoutData'
 
 import Footer from './Footer'
 import Header from './Header'
 import Providers from './Providers'
 
-export interface LayoutProps extends ILayoutData {
+export interface LayoutProps {
   children: ReactChild
   title?: string
 }
