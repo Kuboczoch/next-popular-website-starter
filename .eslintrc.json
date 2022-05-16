@@ -51,7 +51,7 @@
         "trailingComma": "all",
         "tabWidth": 2,
         "useTabs": false,
-        "endOfLine": "lf",
+        "endOfLine": "crlf",
         "parser": "typescript"
       }
     ],
@@ -100,11 +100,13 @@
           "builtin"
         ],
         "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
           [
+            "builtin",
+            "external"
+          ],
+          "internal",
+          [
+            "parent",
             "sibling",
             "index"
           ]

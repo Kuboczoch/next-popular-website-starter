@@ -1,6 +1,5 @@
 import type ButtonText from '../ButtonText'
 import type StyledButton from '../StyledButton'
-
 import PrimaryButtonText from './primary/PrimaryButtonText'
 import PrimaryStyledButton from './primary/PrimaryStyledButton'
 
