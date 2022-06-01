@@ -8,8 +8,9 @@
     "start": "next start",
     "export": "next export",
     "lighthouse-check": "lhci autorun",
-    "test": "jest --config=jest.config.js",
-    "test-coverage": "jest --config=jest.config.js --coverage",
+    "test:e2e": "playwright test",
+    "test:unit": "jest --config=jest.config.ts",
+    "test:unit-coverage": "jest --config=jest.config.ts --coverage",
     "check-style": "eslint './{src,public}/**/*.{ts,tsx,js}'",
     "check-types": "tsc --noEmit"
   },
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.4",
+    "@playwright/test": "^1.22.2",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.7.4",
     "@types/react": "^17.0.6",
@@ -42,6 +44,7 @@
     "jest-css-modules": "^2.1.0",
     "jest-junit": "^13.2.0",
     "ts-jest": "^28.0.3",
+    "ts-node": "^10.8.0",
     "typescript": "^4.2.4"
   },
   "jest-junit": {
