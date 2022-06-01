@@ -1,7 +1,6 @@
 # next-popular-website-starter
 
 [![Build](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/master.yml)
-[![ESLint](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/Kuboczoch/next-popular-website-starter/actions/workflows/lint.yml)
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Kuboczoch/next-popular-website-starter/issues)
 
