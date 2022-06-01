@@ -137,6 +137,11 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+      - name: Cache next-app-build
+        uses: actions/cache@v2
+        with:
+          path: '.next'
+          key: ${{ runner.os }}-next-${{ hashFiles('yarn.lock') }}
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Run your tests
