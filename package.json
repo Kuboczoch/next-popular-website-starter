@@ -8,6 +8,8 @@
     "start": "next start",
     "export": "next export",
     "lighthouse-check": "lhci autorun",
+    "test": "jest --config=jest.config.js",
+    "test-coverage": "jest --config=jest.config.js --coverage",
     "check-style": "eslint './{src,public}/**/*.{ts,tsx,js}'",
     "check-types": "tsc --noEmit"
   },
@@ -23,17 +25,32 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.4",
+    "@types/jest": "^27.5.2",
     "@types/node": "^16.7.4",
     "@types/react": "^17.0.6",
     "@types/react-stickynode": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
+    "babel-jest": "^28.1.0",
     "eslint": "^8.13.0",
     "eslint-config-teacode": "^1.0.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.4.0",
     "file-loader": "^6.2.0",
+    "jest": "^28.1.0",
+    "jest-css-modules": "^2.1.0",
+    "jest-junit": "^13.2.0",
+    "ts-jest": "^28.0.3",
     "typescript": "^4.2.4"
+  },
+  "jest-junit": {
+    "outputDirectory": "reports",
+    "outputName": "jest-junit.xml",
+    "ancestorSeparator": " › ",
+    "uniqueOutputName": "false",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}"
   }
 }
